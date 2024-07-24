@@ -44,6 +44,13 @@ export default function App() {
     }
   };
 
+  const generateAdultKolobokStory = () => {
+    setHeroes('Adult Kolobok');
+    setVillains('Forest creatures, Fox');
+    setPlot('The adventures and life experiences of an adult Kolobok who now faces different challenges in the forest.');
+    fetchStory();
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollView}>
@@ -72,6 +79,7 @@ export default function App() {
           />
         </View>
         <Button title="Generate Fairy Tale" onPress={fetchStory} />
+        <Button title="Generate Adult Kolobok Story" onPress={generateAdultKolobokStory} style={styles.adultKolobokButton}/>
         {loading ? (
           <ActivityIndicator size="large" color="#0000ff" style={styles.loader} />
         ) : (
@@ -126,5 +134,8 @@ const styles = StyleSheet.create({
   storyText: {
     fontSize: 16,
     lineHeight: 24,
+  },
+  adultKolobokButton: {
+    marginTop: 10,
   },
 });
